@@ -1,6 +1,5 @@
 import random
 from flask import Flask, render_template
-import datetime
 
 app = Flask(__name__)
 
@@ -8,8 +7,6 @@ app = Flask(__name__)
 def datetimefilter(value, format='%Y/%m/%d %H:%M'):
     """convert a datetime to a different format."""
     return value.strftime(format)
-
-app.jinja_env.filters['datetimefilter'] = datetimefilter
 
 @app.route("/")
 def template_test():
